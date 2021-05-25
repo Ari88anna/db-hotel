@@ -5,7 +5,7 @@
 
 2.Seleziona tutti gli ospiti che sono nati dopo il 1988 
 
-    SELECT * FROM `ospiti` WHERE `date_of_birth` > '1988-12-31'
+    SELECT * FROM `ospiti` WHERE `date_of_birth` > '1989-01-01'
 
 
 3.Seleziona tutti gli ospiti che hanno più di 20 anni(al momento dell’esecuzione della query)
@@ -29,12 +29,12 @@
 
 7.Seleziona gli ospiti riconosciuti con patente e nati nel 1975
 
-    SELECT * FROM `ospiti` WHERE `document_type` = 'Driver License' AND `date_of_birth` BETWEEN '1974-12-31' AND '1975-12-31'
+    SELECT * FROM `ospiti` WHERE `document_type` = 'Driver License' AND YEAR(date_of_birth) = '1975'
 
 
 8.Quanti paganti sono anche ospiti? 
 
-    SELECT * FROM `paganti` WHERE `ospite_id` IS NOT NULL
+    SELECT COUNT(`ospite_id`) FROM `paganti` WHERE `ospite_id` IS NOT NULL
 
 
 9.Quanti posti letto ha l’hotel in totale?
