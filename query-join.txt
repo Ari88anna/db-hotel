@@ -10,9 +10,9 @@
 2.Stampare tutti gli ospiti per ogni prenotazione
 
     SELECT ospiti.name, ospiti.lastname 
-    FROM `prenotazioni_has_ospiti`                                     NO
+    FROM `prenotazioni_has_ospiti`                                     
     INNER JOIN `ospiti`
-    ON ospiti.name = prenotazioni_has_ospiti.ospite_id
+    ON ospiti.id = prenotazioni_has_ospiti.ospite_id
 
 
 
@@ -32,7 +32,13 @@
 
 
 
-5.Prendi i dati di fatturazione per la prenotazionecon id=7
+5.Prendi i dati di fatturazione per la prenotazione con id=7
+
+    SELECT paganti.name, paganti.lastname, paganti.address, pagamenti.price 
+    FROM `pagamenti` 
+    INNER JOIN `paganti` 
+    ON pagamenti.pagante_id = paganti.id 
+    WHERE `prenotazione_id` = 7
 
 
 
